@@ -23,7 +23,7 @@ describe('Feature Test:', function(){
   it('prevents take off when weather is stormy', function(){
     plane.land(airport)
     spyOn(airport,'isStormy').and.returnValue(true);
-    expect(function(){ plane.takeoff();}).toThrowError('cannot takeoff during storm');
+    expect(function(){ plane.takeOff();}).toThrowError('planes cannot takeoff during storm');
     expect(airport.hangar()).toContain(plane);
   });
 
