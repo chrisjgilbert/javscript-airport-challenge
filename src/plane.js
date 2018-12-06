@@ -8,3 +8,7 @@ Plane.prototype.land = function(airport){
 Plane.prototype.takeOff = function(){
   this._location.clearPlaneForTakeOff();
 };
+
+Airport.prototype.isStormy = function() {
+  return false;
+};
