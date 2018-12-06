@@ -19,3 +19,7 @@ Airport.prototype.clearPlaneForTakeOff = function(plane) {
   }
   this._hangar = [];
 };
+
+Airport.prototype.isStormy = function() {
+  return false;
+};
