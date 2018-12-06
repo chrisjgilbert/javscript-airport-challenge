@@ -9,15 +9,21 @@ describe('Feature Test:', function(){
     airport = new Airport();
   });
 
-  it('planes can be instructed to land at an airport', function(){
-    plane.land(airport);
-    expect(airport.hangar()).toContain(plane);
-  });
+  describe('under normal conditions',function(){
+    beforeEach(function(){
+      spyOn(Math,'random').and.returnValue(0);
+    });
 
-  it('planes can be instructed to takeoff', function(){
-  plane.land(airport)
-  plane.takeOff();
-  expect(airport.hangar()).not.toContain(plane);
+    it('planes can be instructed to land at an airport', function(){
+      plane.land(airport);
+      expect(airport.hangar()).toContain(plane);
+    });
+
+    it('planes can be instructed to takeoff', function(){
+      plane.land(airport)
+      plane.takeOff();
+      expect(airport.hangar()).not.toContain(plane);
+    });
   });
 
   it('prevents take off when weather is stormy', function(){
